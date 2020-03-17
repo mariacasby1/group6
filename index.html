@@ -3,16 +3,68 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Project1 API</title>
+  <style>
+    .hide {
+      display: none;
+    }
+
+    #left {
+      width: 400px;
+      float: left;
+      margin: 30px;
+    }
+    #right {
+      
+      margin-top: 30px;
+    }
+  </style>
+
 </head>
 
 <body>
-    <script>
+  <div id="left">
+    <form>
 
+      <h2>Choose Main Ingredient</h2>
+      <div id="mainingred">
+        <button class="ingred" id="beef">Beef</button>
+        <button class="ingred" id="pork">Pork</button>
+        <button class="ingred" id="lamb">Lamb</button>
+        <button class="ingred" id="chicken">Chicken</button>
+        <button class="ingred" id="fish">Fish</button>
+        <button class="ingred" id="vegetarian">Vegetarian</button>
 
+      </div>
+      <h2>Choose Restrictions</h2>
+      <div id="restrictions">
+        <button class="Health" id="peanut-free">Peanut-Free</button>
+        <button class="Health" id="vegan">Vegan</button>
+        <button class="Diet" id="low-fat">Low Fat</button>
+        <button class="Diet" id="low-carb">Low Carb</button>
+      </div>
+      <br>
+      <br>
+      <button class="done" id="done">Done</button>
+      <br>
+      <br>
+      <button class="clear" id="clear">Clear Search</button>
+      <br>
+      <br>
+      <button class="hide" id="next">Next Recipe</button>
+    </form>
+  </div>
+  <div id="right">
+    <h1 id="recipeName"></h1>
+    <a id="recLink" href="" target="_blank"></a>
+    <ul id="myul"></ul>
+    <img src="">
+  </div>
 
-
-    </script>    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 </body>
+
+</html>
