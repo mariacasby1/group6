@@ -1,0 +1,44 @@
+body {
+    margin: 0px 60px 0px 60px;
+}
+.menu {
+    padding: 20px;
+    border-color: bisque;
+
+}
+
+.main-container{
+    margin-bottom: 20px;
+    height: 300px;
+    text-align: center;
+    background-color: bisque;
+}
+.refresh-container {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+
+}
+.refresh-btn :hover {
+    border-color: black!important;
+    background-color: bisque;
+    
+}
+.size {
+    height: 200px;
+    width: 300px;
+}
+
+
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: bisque;
+}
+
+h5 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 70px;
+}

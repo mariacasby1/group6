@@ -1,159 +1,73 @@
-$(document).ready(function () {
-    var health;
-    var mainIngred;
-    var myli;
-    var count = 0;
-    var all;
-    var globalResponse;
-    var queryURL = "https://api.edamam.com/search?app_id=fd3c9f61&app_key=a9692cfbd33278c8428f017749dff618"
-  
-    function reRender() {
-      $('#myul').empty();
-      all = globalResponse.hits[++count];
-      var recipeName = all.recipe.label;
-      var ingreds = all.recipe.ingredientLines;
-      var photo = all.recipe.image;
-      var recLink = all.recipe.shareAs;
-      console.log(ingreds)
-      $('#recipeName').text(recipeName);
-      $('#recLink').text("Find the full recipe here")
-      $('#recLink').attr("href", recLink);
-      $('img').attr('src', photo);
-      $('#next').removeClass('hide')
-  
-      for (var i = 0; i < ingreds.length; i++) {
-        myli = $('<li>').text(ingreds[i]);
-        $('#myul').append(myli);
-      }
-    }
-  
-    $('#clear').on('click', function () {
-      event.preventDefault();
-  
-      queryURL = "https://api.edamam.com/search?app_id=fd3c9f61&app_key=a9692cfbd33278c8428f017749dff618"
-      $('#recipeName').text('');
-      $('#recLink').text("");
-      $('#recLink').attr("href", '');
-      $('img').attr('src', '');
-      $('#next').addClass('hide');
-      $('#myul').empty();
-    });
-  
-    $('.ingred').click(function(event) {
-      event.preventDefault();
-      mainIngred = this.id;           //mainIngred = $(this).attr("id");
-      queryURL += `&q=${mainIngred}`
-  //    queryURL += "&q=" + mainIngred;
-    });
-  
-    $('.Health').click(function(event) {
-      event.preventDefault();
-      health = this.id;
-      queryURL += `&health=${health}`
-    });
-  
-    $('.Diet').click(function(event) {
-      event.preventDefault();
-      diet = this.id;
-      queryURL += `&diet=${diet}`
-    });
-  
-    $('#done').click(function(event) {
-      event.preventDefault();
-  
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function (response) {
-        globalResponse = response;
-        console.log(response);
-  
-  /*      all = response.hits[count];
-        var recipeName = all.recipe.label;
-        var ingreds = all.recipe.ingredientLines;
-        var photo = all.recipe.image;
-        var recLink = all.recipe.shareAs;
-        console.log(ingreds)
-        $('#recipeName').text(recipeName);
-        $('#recLink').text("Find the full recipe here")
-        $('#recLink').attr("href", recLink);
-        $('img').attr('src', photo);
-        $('#next').removeClass('hide')*/
-  
-        reRender();
-  
-  /*      for (var i = 0; i < ingreds.length; i++) {
-          myli = $('<li>').text(ingreds[i]);
-          $('#myul').append(myli);
-        }*/
-      });
-    });
-  
-  
-  /*  $('button').on('click', function () {
-      event.preventDefault();
-      myid = this.id;
-      if (myid === "beef" || myid === "pork" || myid === "fish" || myid === "lamb" || myid === "chicken" || myid === "vegetarian") {
-        mainIngred = this.id;
-        queryURL += `&q=${mainIngred}`
-        return queryURL;
-      }
-      if (myid === "peanut-free" || myid === "vegan") {
-        health = this.id;
-        queryURL += `&health=${health}`
-        return queryURL;
-      }
-      if (myid === "low-fat" || myid === "low-carb") {
-        diet = this.id;
-        queryURL += `&diet=${diet}`
-        return queryURL;
-      }
-      if (myid === "done") {
-        $.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function (response) {
-          globalResponse = response;
-          console.log(response);
-          all = response.hits[count];
-          var recipeName = all.recipe.label;
-          var ingreds = all.recipe.ingredientLines;
-          var photo = all.recipe.image;
-          var recLink = all.recipe.shareAs;
-          console.log(ingreds)
-          $('#recipeName').text(recipeName);
-          $('#recLink').text("Find the full recipe here")
-          $('#recLink').attr("href", recLink);
-          $('img').attr('src', photo);
-          $('#next').removeClass('hide')
-          for (var i = 0; i < ingreds.length; i++) {
-            myli = $('<li>').text(ingreds[i]);
-            $('#myul').append(myli);
-          }
+$(document).ready(function() {
+
+  var queryURL1 = "https://www.themealdb.com/api/json/v1/1/random.php";
+  var queryURL2 = "https://www.themealdb.com/api/json/v1/1/random.php";
+  var queryURL3 = "https://www.themealdb.com/api/json/v1/1/random.php";
+function randomMeal() {
+  $.ajax({
+      url: queryURL1,
+      method: "GET"
+     }).then(function(response) {
+      console.log(response);
+      var imgURL = response.meals[0].strMealThumb;
+      var imgForImg = $("<img class = 'size'>").attr("src",imgURL);
+      $(".card-one").prepend(imgForImg);
+      var mealName = response.meals[0].strMeal;
+      var pForName = $("<h5>").text(mealName);
+      $(".card-section-one").append(pForName);
+      var instruction = $("<h5>").text("Insturction");
+      $(".card-section-one").append(instruction);
+      var mealInst = response.meals[0].strInstructions;
+      var pForInst =  $("<p>").text(mealInst);
+      $(".card-section-one").append(pForInst);
+     });
+    
+     $.ajax({
+         url: queryURL2,
+         method: "GET"
+        }).then(function(response) {
+         console.log(response);
+         var imgURL = response.meals[0].strMealThumb;
+         var imgForImg = $("<img class = 'size'>").attr("src",imgURL);
+         $(".card-two").prepend(imgForImg);
+         var mealName = response.meals[0].strMeal;
+         var pForName = $("<h5>").text(mealName);
+         $(".card-section-two").append(pForName);
+         var instruction = $("<h5>").text("Insturction");
+         $(".card-section-two").append(instruction);
+         var mealInst = response.meals[0].strInstructions;
+         var pForInst =  $("<p>").text(mealInst);
+         $(".card-section-two").append(pForInst);
         });
-      }
-    });*/
+       
+        $.ajax({
+            url: queryURL3,
+            method: "GET"
+           }).then(function(response) {
+            console.log(response);
+            var imgURL = response.meals[0].strMealThumb;
+            var imgForImg = $("<img class = 'size'>").attr("src",imgURL);
+            $(".card-three").prepend(imgForImg);
+            var mealName = response.meals[0].strMeal;
+            var pForName = $("<h5>").text(mealName);
+            $(".card-section-three").append(pForName);
+            var instruction = $("<h5>").text("Insturction");
+            $(".card-section-three").append(instruction);
+            var mealInst = response.meals[0].strInstructions;
+            var pForInst =  $("<p>").text(mealInst);
+            $(".card-section-three").append(pForInst);
+           });
+
+   };
+  //  function renderButtons(){
+  //      $(".grid-container").empty();
+  //      randomMeal();
+
+  //  }
+
+   
+   $(document).on("click", ".refresh-btn", randomMeal);
+  //  renderButtons();
   
-    $('#next').on('click', function () {
-      event.preventDefault();
-  /*    $('#recipeName').text('');
-      $('#recLink').text("");
-      $('#recLink').attr("href", '');
-      $('img').attr('src', '');
-  //    $('#next').addClass('hide');*/
-  /*    $('#myul').empty();
-      all = globalResponse.hits[++count];
-      var recipeName = all.recipe.label;
-      var ingreds = all.recipe.ingredientLines;
-      var photo = all.recipe.image;
-      var recLink = all.recipe.shareAs;
-      console.log(ingreds)
-      $('#recipeName').text(recipeName);
-      $('#recLink').text("Find the full recipe here")
-      $('#recLink').attr("href", recLink);
-      $('img').attr('src', photo);
-      $('#next').removeClass('hide')*/
   
-      reRender();
-    });
-  });
+});
