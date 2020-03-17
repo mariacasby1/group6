@@ -2,66 +2,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Meal Generator</title>
-    <!-- Compressed CSS --> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Meal Generator</title>
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+    integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
-    <ul class="menu">
-        <li class="menu-text">MEAL CORNER</li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-      </ul>
-      <div class="main-container">
-          <h1>Main Containt </h1>
-      </div>
+  <ul class="menu">
+    <li class="menu-text">MEAL CORNER</li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+  </ul>
+  <div id="maria" class="main-container">
+    <div id="left">
+      <form>
 
-      <div class="refresh-container">
-        <h5>Hit the button for magic meal of the day</h5>
-        <button class="refresh-btn">Magic Meal</button>
-      </div>
+        <h2>Choose Main Ingredient</h2>
+        <div id="mainingred">
+          <button type="button" class="ingred button" id="beef">Beef</button>
+          <button type="button" class="ingred button" id="pork">Pork</button>
+          <button type="button" class="ingred button" id="lamb">Lamb</button>
+          <button type="button" class="ingred button" id="chicken">Chicken</button>
+          <button type="button" class="ingred button" id="fish">Fish</button>
+          <button type="button" class="ingred button" id="vegetarian">Vegetarian</button>
 
-      <div class="grid-container">
-        <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-          <div class="cell">
-            <div class="card-one">
-              
-              <div class="card-section-one">
-              
-              </div>
+        </div>
+        <h2>Choose Restrictions</h2>
+        <div id="restrictions">
+          <button type="button" class="Health button secondary" id="peanut-free">Peanut-Free</button>
+          <button type="button" class="Health button secondary" id="vegan">Vegan</button>
+          <button type="button" class="Diet button secondary" id="low-fat">Low Fat</button>
+          <button type="button" class="Diet button secondary" id="low-carb">Low Carb</button>
+        </div>
+        <br>
+      
+        <button type="button" class="done button alert" id="done">Done</button>
+        <br>
+        <button type="button" class="button warning" id="clear">Clear Search</button>
+       
+        <button type="button" class="hide button" id="next">Next Recipe</button>
+      </form>
+    </div>
+    <div id="two">
+      <h1 id="recipeName"></h1>
+      <a id="recLink" href="" target="_blank"></a>
+      <ul id="myul"></ul>
+      
+    </div>
+    <div id="three">
+  
+      <img src="">
+    </div>
+  </div>
+  <div id="henok">
+    <div class="refresh-container">
+      <h5>Hit the button for magic meal of the day</h5>
+      <button class="button refresh-btn">Magic Meal</button>
+    </div>
+
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+        <div class="cell">
+          <div class="card-one">
+
+            <div class="card-section-one">
+
             </div>
           </div>
-          <div class="cell">
-            <div class="card-two">
-              
-              <div class="card-section-two">
-                
-              </div>
+        </div>
+        <div class="cell">
+          <div class="card-two">
+
+            <div class="card-section-two">
+
             </div>
           </div>
-          <div class="cell">
-            <div class="card-three">
-              
-              <div class="card-section-three">
-                
-              </div>
+        </div>
+        <div class="cell">
+          <div class="card-three">
+
+            <div class="card-section-three">
+
             </div>
           </div>
         </div>
       </div>
-          
-      <footer>
-        <small>&copy;group6</small>
-      </footer>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="script.js"></script>
-     
-    
+    </div>
+  </div>
+  <footer>
+    <small>&copy;group6</small>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script2.js"></script>
+  <script src="script.js"></script>
+
+
+
 </body>
+
 </html>
-
-
