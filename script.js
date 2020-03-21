@@ -40,26 +40,37 @@ $(document).ready(function() {
      $('.main-img').attr('src', '');
      $('#next').addClass('hide');
      $('#myul').empty();
+     $('button').removeClass('red');
+     $('.diet').addClass('secondary');
+     $('.health').addClass('secondary');
    });
 
 //This set all user's ingerdiants choose button function
    $('.ingred').click(function(event) {
      event.preventDefault();
-     mainIngred = this.id;           
+     
+     $(this).addClass('red');
+     mainIngred = this.id;         
      eQueryURL += `&q=${mainIngred}`
 
    });
  
-   $('.Health').click(function(event) {
+   $('.health').click(function(event) {
      event.preventDefault();
+     $(this).removeClass('secondary');
+     $(this).addClass('red');
      health = this.id;
      eQueryURL += `&health=${health}`
+     $(this).addClass('red');
    });
  
-   $('.Diet').click(function(event) {
+   $('.diet').click(function(event) {
      event.preventDefault();
+     $(this).removeClass('secondary');
+     $(this).addClass('red');
      diet = this.id;
      eQueryURL += `&diet=${diet}`
+     
    });
  
    $('#done').click(function(event) {
@@ -68,10 +79,11 @@ $(document).ready(function() {
      $.ajax({
        url: eQueryURL,
        method: "GET"
+      
      }).then(function (response) {
        globalResponse = response;
        console.log(response);
- 
+       console.log(eQueryURL)
        reRender();
  
      });
