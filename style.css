@@ -1,17 +1,12 @@
 body {
-    margin: 0px 60px 0px 60px;
+    margin: 0px;
 }
-.menu {
-    padding: 20px;
-    border-color: bisque;
 
-}
 
 .main-container{
-    margin-bottom: 20px;
-   
+    margin-bottom: 20px;   
     text-align: center;
-    background-color: bisque;
+    
 }
 .refresh-container {
     clear: both;
@@ -20,11 +15,8 @@ body {
     margin: 20px;
 
 }
-.refresh-btn :hover {
-    border-color: black!important;
-    background-color: bisque;
+
     
-}
 .size {
     height: 200px;
     width: 300px;
@@ -36,10 +28,9 @@ footer{
     text-align: center;
     padding: 20px;
     margin-top: 20px;
-    background-color: bisque;
+    
 }
 
-/* maria's css*/
 
 #maria h1 {
     font-size: 22px;
