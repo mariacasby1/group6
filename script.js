@@ -24,8 +24,8 @@ $(document).ready(function() {
      $('#next').removeClass('hide');
      $('#left').removeClass('center');
      $('#left').addClass('left');
-    //$('#two').addClass('left');
-    // $('#three').addClass('left');
+    $('#two').addClass('left');
+     $('#three').addClass('left');
 
 //Here we set a list of meal reciepe
      for (var i = 0; i < ingreds.length; i++) {
