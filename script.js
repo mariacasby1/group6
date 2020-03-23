@@ -21,7 +21,11 @@ $(document).ready(function() {
      $('#recLink').text("Find the full recipe here")
      $('#recLink').attr("href", recLink);
      $('.main-img').attr('src', photo);
-     $('#next').removeClass('hide')
+     $('#next').removeClass('hide');
+     $('#left').removeClass('center');
+     $('#left').addClass('left');
+    //$('#two').addClass('left');
+    // $('#three').addClass('left');
 
 //Here we set a list of meal reciepe
      for (var i = 0; i < ingreds.length; i++) {
@@ -107,9 +111,9 @@ $(document).ready(function() {
         console.log(response);    
         var imgForImg = $("<img class = 'size'>").attr("src",response.meals[0].strMealThumb);
         $(".card-one").prepend(imgForImg);
-        var pForName = $("<a target = '-blank'>").attr("href", response.meals[0].strYoutube).text(response.meals[0].strMeal);
+        var pForName = $("<a target = '_blank'>").attr("href", response.meals[0].strYoutube).text(response.meals[0].strMeal);
         $(".card-section-one").append(pForName);
-        var instruction = $("<h5>").text("Instruction");
+        var instruction = $("<h5>").text("Instructions");
         $(".card-section-one").append(instruction);
         ;
         var pForInst =  $("<p>").text(response.meals[0].strInstructions);
@@ -123,9 +127,9 @@ $(document).ready(function() {
            console.log(response);
            var imgForImg = $("<img class = 'size'>").attr("src", response.meals[0].strMealThumb);
            $(".card-two").prepend(imgForImg);   
-           var pForName = $("<a target = '-blank'>").attr("href", response.meals[0].strYoutube).text(response.meals[0].strMeal);
+           var pForName = $("<a target = '_blank'>").attr("href", response.meals[0].strYoutube).text(response.meals[0].strMeal);
            $(".card-section-two").append(pForName);
-           var instruction = $("<h5>").text("Instruction");
+           var instruction = $("<h5>").text("Instructions");
            $(".card-section-two").append(instruction);       
            var pForInst =  $("<p>").text(response.meals[0].strInstructions);
            $(".card-section-two").append(pForInst);
@@ -138,9 +142,9 @@ $(document).ready(function() {
               console.log(response);             
               var imgForImg = $("<img class = 'size'>").attr("src",response.meals[0].strMealThumb);
               $(".card-three").prepend(imgForImg); 
-              var pForName = $("<a target = '-blank'>").attr("href", response.meals[0].strYoutube).text( response.meals[0].strMeal);
+              var pForName = $("<a target = '_blank'>").attr("href", response.meals[0].strYoutube).text( response.meals[0].strMeal);
               $(".card-section-three").append(pForName);
-              var instruction = $("<h5>").text("Instruction");
+              var instruction = $("<h5>").text("Instructions");
               $(".card-section-three").append(instruction);
               var pForInst =  $("<p>").text(response.meals[0].strInstructions);
               $(".card-section-three").append(pForInst);

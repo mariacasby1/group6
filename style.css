@@ -1,89 +1,147 @@
+/*tan bg over page*/
+
 body {
     margin: 0px;
+    background-color: beige;
 }
-
-
+/*light blue title strip with lower white border and centered text*/
+#menu {
+    padding: 10px;
+    border-bottom:2px double white;
+  background-color: #74c7c7;
+    text-align:center;
+}
+/*main title*/
+#menu h1 {
+    font-size: 60px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    color: white;
+    }
+    /*magic meal title*/
+ h5 {
+        font-size: 24px;
+        font-family: 'Amatic SC', cursive;
+        font-weight: bold;
+        color:white;
+    }
+     /*recipe chooser and menus - starts center shifts left*/ 
 .main-container{
-    margin-bottom: 20px;   
-    text-align: center;
-    
+    margin: 40px;    
+    text-align: center;  
 }
+/*light blue bottom strip */
 .refresh-container {
     clear: both;
     text-align: center;
+    width: 100%;
     padding: 20px;
     margin: 20px;
-
-}
-
-    
+    background-color: #74c7c7;
+    border-top: 2px double white;
+    margin-top: -55px;
+} 
+/*magic meal image sizes */  
 .size {
     height: 200px;
     width: 300px;
 }
-
-
 footer{
     width: 100%;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    
+    margin-top: 20px;    
 }
-
-
+/*ingred chooser text */ 
 #maria h1 {
-    font-size: 22px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
 }
+/*meal title */ 
 #maria h2 {
-    font-size: 20px;
+    font-size: 24px;
+    font-family: 'Amatic SC', cursive;
 }
+/*aligns ingred list to left */ 
 #maria ul {
     text-align: left;
 }
-
+/*hide next button */ 
 .hide {
     display: none;
-  }
-
+}
+/*choose ingred box */ 
  #left {
     width: 400px;
-    float: left;
-    margin: 30px;
+    border: 3px solid #74c7c7;
+    border-radius: 20px;
   }
+/*centers ingred box in beginning */ 
+  .center {
+    margin: 30px auto;  
+  }
+  .left {
+    float:left;
+}
+/*middle recipe box*/ 
  #two {
     width: 400px;
-    float: left;
-    margin-top: 30px;
+    margin-left: 30px;
+    font-family: 'Noto Serif TC', serif;
   }
- #three {
-   
-    float:left;
-    margin-top: 30px;
+  /*recipe box with image*/ 
+ #three { 
+    margin-left: 30px;
   }
-
+   /*recipe buttons*/ 
   #maria button {
       padding: 4px;
       border-radius: 4px;
       border: 1px rgb(24, 5, 90) solid;
   }
-  #maria .ingred:visited, #maria .ingred:active{
-    color: yellow!important;
-     border: 1px rgb(24, 5, 90) solid;
- }
-
-
+  /*done  buttons*/ 
   #maria #done {
     padding: 6px;
     border-radius: 6px;
     border: 2px rgb(24, 5, 90) solid;
     margin:0 10px 10px 10px;
   }
-  #maria img {
-      border: 5px rgb(24, 5, 90) solid;
+    /*rounded border to images*/ 
+ img {
+    
       border-radius: 15px;
+      border: 3px #74c7c7 solid;
   }
-  .red {
-      background-color:red;
-  }
-  
+  /*rmagic meal text justifies and tightens lines*/ 
+ p {
+    font-family: 'Noto Serif TC', serif;
+    text-align: justify;
+    line-height: 1.2em;
+ }
+/*rmagic meal card shadows*/ 
+ 
+ .card-one, .card-two, .card-three {
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+ }
+ /*button background*/ 
+ .button {
+     background-color: #74c7c7;
+
+ }
+ /*button  hover background*/ 
+ .button:hover {
+     background-color:#115a5a;
+ }
+ /*magic meal button rounded */ 
+ .rounded {
+    border-radius: 5px;
+         background-color:#115a5a;
+         
+     }
+      /*magic meal hover button rounded */ 
+     .rounded:hover {
+         background-color: gray;
